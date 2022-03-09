@@ -11,7 +11,11 @@ import javax.persistence.TypedQuery;
 
 public class Main3CompleteCrud {
 
+	private static Passord p;
+
 	public static void main(String[] args) {
+
+		p = new Passord();
 		
 		Main3CompleteCrud crud = new Main3CompleteCrud();
 		
@@ -56,7 +60,7 @@ public class Main3CompleteCrud {
 	public Main3CompleteCrud() {
 		emf = Persistence
 				.createEntityManagerFactory("personPersistenceUnit", 
-				Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+				Map.of("javax.persistence.jdbc.password", p.getPassord()));
 	}
 	
 	public void createPerson(Person p) {

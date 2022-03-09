@@ -13,12 +13,17 @@ public class Main1PlainOldJDBC {
 //	static final String DB_URL = "jdbc:postgresql://localhost:5432/dat107v22";
 //	static final String USER = "postgres";
 //	static final String PASS = Passwords.LOCALHOST_PASSWORD;
-	
- 	static final String DB_URL = "jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5432/lph";
-	static final String USER = "lph";
-	static final String PASS = Passwords.AZURE_PASSWORD;
+
+ 	static String DB_URL;
+	static String USER;
+	static String PASS;
 
 	public static void main(String[] args) {
+
+		Innlogging innlogging = new Innlogging();
+		DB_URL = innlogging.getDB_URL();
+		USER = innlogging.getBRUKERNAVN();
+		PASS = innlogging.getPASSORD();
 
 		Connection conn = null;
 		Statement stmt = null;
@@ -31,8 +36,9 @@ public class Main1PlainOldJDBC {
 
 			System.out.println("Creating statement...");
 			stmt = conn.createStatement();
-			String sql = "SELECT id, navn FROM forelesning1.person";
-			ResultSet rs = stmt.executeQuery(sql);
+
+			String sql = "SELECT id, navn FROM forelesning1.person"; //Starter en spørring
+			ResultSet rs = stmt.executeQuery(sql); //Lagrer resultatet i ResultSet
 
 	        System.out.println("Hello!");
 	        

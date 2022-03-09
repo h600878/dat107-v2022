@@ -15,8 +15,8 @@ public class Main4UsingAHelperMethod {
 //	static final String PASS = Passwords.LOCALHOST_PASSWORD;
 	
  	static final String DB_URL = "jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5432/lph";
-	static final String USER = "lph";
-	static final String PASS = Passwords.AZURE_PASSWORD;
+	static final String USER = "h600878";
+	static final String PASS = "58024961aB"; //TODO skriv passord
 	
 	public static void main(String[] args) throws ClassNotFoundException {
 

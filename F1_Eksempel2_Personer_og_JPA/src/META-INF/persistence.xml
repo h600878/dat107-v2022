@@ -4,13 +4,13 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="personPersistenceUnit" transaction-type="RESOURCE_LOCAL">
 
-		<class>no.hvl.dat107.Person</class>
+		<class>no.hvl.dat107.Person</class> <!-- Alle klassene med @Entity -->
 		
 		<properties>
 		    <!--  Generelle JPA properties -->
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5432/lph"/>
-			<property name="javax.persistence.jdbc.user" value="lph"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ider-database.westeurope.cloudapp.azure.com:5432/h600878"/>
+			<property name="javax.persistence.jdbc.user" value="h600878"/>
 <!--		<property name="javax.persistence.jdbc.password" value="??????"/>  -->
 			
 			<!--  EclipseLink properties -->

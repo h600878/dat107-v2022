@@ -8,8 +8,11 @@ import javax.persistence.Persistence;
 
 public class Main2SimilarToJDBCMain4 {
 
+    private static Passord p;
+
     public static void main(String[] args) {
 
+        p = new Passord();
         Person p = finnPersonMedId(1001);
 
         System.out.println(p);
@@ -19,7 +22,7 @@ public class Main2SimilarToJDBCMain4 {
 
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("personPersistenceUnit", 
-				Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+				Map.of("javax.persistence.jdbc.password", p.getPassord()));
 
         EntityManager em = emf.createEntityManager();
 

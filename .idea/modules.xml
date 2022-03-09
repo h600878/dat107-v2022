@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC.iml" filepath="$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/F1_Eksempel2_Personer_og_JPA.iml" filepath="$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/F1_Eksempel2_Personer_og_JPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hallo_DAT107/Hallo_DAT107.iml" filepath="$PROJECT_DIR$/Hallo_DAT107/Hallo_DAT107.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dat107-v2022.iml" filepath="$PROJECT_DIR$/.idea/dat107-v2022.iml" />
+    </modules>
+  </component>
+</project>
