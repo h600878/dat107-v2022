@@ -4,7 +4,8 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="personPersistenceUnit" transaction-type="RESOURCE_LOCAL">
 
-		<class>no.hvl.dat107.Person</class> <!-- Alle klassene med @Entity -->
+		<!-- Alle klassene med @Entity -->
+		<class>no.hvl.dat107.Person</class>
 		
 		<properties>
 		    <!--  Generelle JPA properties -->

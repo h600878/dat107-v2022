@@ -14,17 +14,18 @@ public class Main1SimilarToJDBCMain3 {
 
 		String jpql = "SELECT p FROM Person p"; //Spørring, returnerer alt i Person
 
-		//Skriver inn passord til databasen
+		//Kobler til databasen og skriver inn passord til databasen
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("personPersistenceUnit", 
 				Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
 
+		//Hjelpeobjekt for databasen
 		EntityManager em = emf.createEntityManager();
 		
 		System.out.println("Kobler til database...");
 
 		try {
-			//oppretter en spørring med String over og Person klassen
+			//oppretter en spørring med String over, og Person klassen
 	        TypedQuery<Person> query = em.createQuery(jpql, Person.class);
 	        List<Person> personer = query.getResultList();
 		    
@@ -33,7 +34,7 @@ public class Main1SimilarToJDBCMain3 {
 	            System.out.println(", Navn: " + p.getNavn());
 	        }
 		} finally {
-	        em.close();
+	        em.close(); //Stenger databasen
 		}
 
 		System.out.println("Ferdig!");

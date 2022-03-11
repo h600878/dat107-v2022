@@ -48,7 +48,7 @@ public class Main3CompleteCrud {
 	
 	private static Databasehjelper dbhjelper = new Databasehjelper();
 	
-	private EntityManagerFactory emf;
+	private final EntityManagerFactory emf;
 	
 	public Main3CompleteCrud() {
 		emf = Persistence
@@ -61,30 +61,103 @@ public class Main3CompleteCrud {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 
-		/* Eksempeldatabasen vår ser slik ut:
-		 *  
-		 * id		navn
-		 * ----------------------
-		 * 1001	'Per Viskeler'
-		 * 1002	'Atle Patle'
-		 * 1003	'Donald Duck'
-		 */
-		skrivUt("Utgangspunkt");
+		try {
+			tx.begin(); //Starter en ny transaksjon
+			em.persist(p); //Oppretter en ny rad i databasen
+			tx.commit(); //Committer transaksjonen
 		
-		//Create - Opprette ny(e) rad(er) i databasen
-		dbhjelper.createPerson(new Person(1004, "Mikke"));
-		skrivUt("Har lagt til Mikke");
+		} catch (Throwable e) {
+			e.printStackTrace();
+			tx.rollback();
+		} finally {
+			em.close();
+		}
+	}
+
+	/**
+	 * Henter ut en Person fra databasen med gitt id
+	 * @param id Primærnøkkel
+	 * @return Person object eller null, hvis ikke funnet
+	 */
+	public Person retrievePerson(int id) {
+
+		EntityManager em = emf.createEntityManager();
+
+		Person p;
+		try {
+			p = em.find(Person.class, id); //Finner en Person ved gitt id
+		} finally {
+			em.close();
+		}
+		return p;
+	}
+
+	/**
+	 * Henter ut alle personer i databasen
+	 * @return En liste av Personer
+	 */
+	public List<Person> retrieveAllePersoner() {
+
+		EntityManager em = emf.createEntityManager();
+
+		List<Person> personer;
+		try {
+			TypedQuery<Person> query = em.createQuery(
+			        "SELECT p FROM Person p", Person.class); //Oppretter en spørring
+			personer = query.getResultList(); //Lagrer resultatet i en spørring
+		} finally {
+			em.close();
+		}
+		return personer;
+	}
+
+	public List<Person> retrieveAllePersoner2() {
+		/* Tester ut NamedQuery */
+
+		EntityManager em = emf.createEntityManager();
+
+		List<Person> personer;
+		try {
+			//Sjekker om det fins en spørring ved navn "hentAllePersoner" og lager en spørring
+			TypedQuery<Person> query = em.createNamedQuery("hentAllePersoner", Person.class);
+			personer = query.getResultList();
+		} finally {
+			em.close();
+		}
+		return personer;
+	}
+
+	/**
+	 * Oppdaterer en gitt id med nytt navn
+	 * @param id
+	 * @param nyttNavn
+	 */
+	public void updatePerson(int id, String nyttNavn) {
+
+		EntityManager em = emf.createEntityManager();
+
+		try {
+			Person p = em.find(Person.class, id); //Finner en Person ved gitt id
+			p.setNavn(nyttNavn); //Setter nytt navn
 		
-		//Read - Hente ut data fra databasen
-		//Hopper over denne
+		} catch (Throwable e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+		} finally {
+			em.close();
+		}
+	}
+	
+	public void deletePerson(Person p) {
 		
-		//Update - Oppdatere data i databasen
-		dbhjelper.updatePerson(1004, "Mikke Mus");
-		skrivUt("Har endret navn til Mikke Mus");
-		
-		//Delete - Slette rad(er) fra databasen
-		dbhjelper.deletePerson(new Person(1001, null));
-		skrivUt("Har slettet person med id 1001");
+		EntityManager em = emf.createEntityManager();
+
+		try {
+			em.getTransaction().begin();
+			
+			em.remove(em.find(Person.class, p.getId()));
+			
+			em.getTransaction().commit();
 		
 		//Tilbakestille til utgangspunkt
 		dbhjelper.createPerson(new Person(1001, "Per Viskeler"));

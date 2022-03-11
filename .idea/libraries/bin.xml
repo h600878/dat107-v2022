@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/bin/postgresql-42.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/bin/javax.persistence-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/bin/eclipselink-2.7.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
