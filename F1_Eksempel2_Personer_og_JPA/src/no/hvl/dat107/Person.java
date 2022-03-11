@@ -5,9 +5,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Entity //Definerer klassen som en entitet
-@Table(schema = "forelesning1") //Lagrer under schema "String"
-@NamedQuery(name = "hentAllePersoner", query ="SELECT p FROM Person p") //Definerer en spørring som henter all data
+@Entity
+@Table(schema = "forelesning1")
+@NamedQuery(name = "hentAllePersoner", query ="SELECT p FROM Person as p order by p.id")
 public class Person {
 	
 	@Id //Primærnøkkel

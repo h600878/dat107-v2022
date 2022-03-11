@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 public class CrudTest {
 
-	@Test
-	public void person1001SkalHetePer() {
-		Main3CompleteCrud crud = new Main3CompleteCrud();
-		Person p = crud.retrievePerson(1001);
-		assertEquals("Per Viskeler", p.getNavn());
-	}
+//	@Test
+//	public void person1001SkalHetePer() {
+//		Main3CompleteCrud crud = new Main3CompleteCrud();
+//		Person p = crud.retrievePerson(1001);
+//		assertEquals("Per Viskeler", p.getNavn());
+//	}
 	
 	
 
