@@ -93,5 +93,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="dat107-v2022" />
+    <orderEntry type="module" module-name="F2_Eksempel0_CRUD" />
   </component>
 </module>

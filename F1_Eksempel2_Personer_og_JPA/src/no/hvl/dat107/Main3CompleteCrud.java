@@ -1,6 +1,8 @@
 package no.hvl.dat107;
 
+import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 public class Main3CompleteCrud {
 
@@ -43,21 +45,24 @@ public class Main3CompleteCrud {
 		mikke = crud.retrievePerson(1004);
 		System.out.println(mikke);
 		System.out.println("---");
+
+		//Tilbakestille til utgangspunkt
+		crud.createPerson(new Person(1001, "Per Viskeler"));
+		crud.deletePerson(new Person(1004, null));
+		crud.skrivUt("Har tilbakestilt db");
 		
 	}
-	
-	private static Databasehjelper dbhjelper = new Databasehjelper();
 	
 	private final EntityManagerFactory emf;
 	
 	public Main3CompleteCrud() {
 		emf = Persistence
-				.createEntityManagerFactory("personPersistenceUnit", 
-				Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+				.createEntityManagerFactory("personPersistenceUnit",
+						Map.of("javax.persistence.jdbc.password", p.getPassord()));
 	}
-	
+
 	public void createPerson(Person p) {
-		
+
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
 
@@ -65,7 +70,7 @@ public class Main3CompleteCrud {
 			tx.begin(); //Starter en ny transaksjon
 			em.persist(p); //Oppretter en ny rad i databasen
 			tx.commit(); //Committer transaksjonen
-		
+
 		} catch (Throwable e) {
 			e.printStackTrace();
 			tx.rollback();
@@ -154,19 +159,22 @@ public class Main3CompleteCrud {
 
 		try {
 			em.getTransaction().begin();
-			
+
 			em.remove(em.find(Person.class, p.getId()));
-			
+
 			em.getTransaction().commit();
-		
-		//Tilbakestille til utgangspunkt
-		dbhjelper.createPerson(new Person(1001, "Per Viskeler"));
-		dbhjelper.deletePerson(new Person(1004, null));
-		skrivUt("Har tilbakestilt db");
+		}
+		catch (Throwable e) {
+			e.printStackTrace();
+			em.getTransaction().rollback();
+		}
+		finally {
+			em.close();
+		}
 	}
 
-	private static void skrivUt(String tekst) {
-		List<Person> personer = dbhjelper.retrieveAllePersoner();
+	private void skrivUt(String tekst) {
+		List<Person> personer = retrieveAllePersoner();
 		System.out.println("\n--- "+ tekst +" ---");
 		personer.forEach(System.out::println);		
 	}

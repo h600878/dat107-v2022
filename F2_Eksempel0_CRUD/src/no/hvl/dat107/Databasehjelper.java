@@ -11,11 +11,11 @@ import javax.persistence.TypedQuery;
 
 public class Databasehjelper {
 
-	private EntityManagerFactory emf;
+	private final EntityManagerFactory emf;
 	
 	public Databasehjelper() {
 		emf = Persistence.createEntityManagerFactory("personPersistenceUnit", 
-				Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+				Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
 	}
 	
 	//Create - Hvordan opprette ny(e) rad(er) i databasen
@@ -127,5 +127,4 @@ public class Databasehjelper {
 		}
 	}
 
-	
 }
