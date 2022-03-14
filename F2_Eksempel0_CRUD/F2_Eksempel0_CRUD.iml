@@ -21,9 +21,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib2" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="postgreSQL lib" level="project" />
     <orderEntry type="module" module-name="dat107-v2022" />
   </component>
 </module>

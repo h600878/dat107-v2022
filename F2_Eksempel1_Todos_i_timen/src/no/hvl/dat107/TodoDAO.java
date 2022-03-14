@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 
 public class TodoDAO {
 	
-	private EntityManagerFactory emf 
+	private final EntityManagerFactory emf
 			= Persistence.createEntityManagerFactory("todoPersistenceUnit", 
 			Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
 	

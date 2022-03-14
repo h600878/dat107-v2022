@@ -4,7 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="todoPersistenceUnit" value="9e446a66-aa5f-40e1-943d-f0b9026f7521" />
+        </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
@@ -18,9 +20,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib2" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="postgreSQL lib" level="project" />
     <orderEntry type="module" module-name="F1_Eksempel2_Personer_og_JPA" />
     <orderEntry type="module" module-name="dat107-v2022" />
   </component>

@@ -39,33 +39,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="javax.persistence-api-2.2.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/javax.persistence-api-2.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="postgresql-42.3.3.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/postgresql-42.3.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="eclipselink-2.7.10.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/eclipselink-2.7.10.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="postgreSQL lib" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
@@ -93,6 +67,5 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="dat107-v2022" />
-    <orderEntry type="module" module-name="F2_Eksempel0_CRUD" />
   </component>
 </module>
