@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC.iml" filepath="$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC1.iml" filepath="$PROJECT_DIR$/F1_Eksempel1_Personer_og_JDBC/F1_Eksempel1_Personer_og_JDBC1.iml" />
       <module fileurl="file://$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/F1_Eksempel2_Personer_og_JPA.iml" filepath="$PROJECT_DIR$/F1_Eksempel2_Personer_og_JPA/F1_Eksempel2_Personer_og_JPA.iml" />
       <module fileurl="file://$PROJECT_DIR$/F2_Eksempel0_CRUD/F2_Eksempel0_CRUD.iml" filepath="$PROJECT_DIR$/F2_Eksempel0_CRUD/F2_Eksempel0_CRUD.iml" />
       <module fileurl="file://$PROJECT_DIR$/F2_Eksempel1_Todos_i_timen/F2_Eksempel1_Todos_i_timen.iml" filepath="$PROJECT_DIR$/F2_Eksempel1_Todos_i_timen/F2_Eksempel1_Todos_i_timen.iml" />
