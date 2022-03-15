@@ -13,12 +13,19 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//a)    Søke opp vitnemålet til en gitt student.
-		//b.i)  Registrere en ny karakter for en gitt student. Karakter finnes ikke fra før.
-		//b.ii) Registrere en ny karakter for en gitt student. Karakter finnes fra før!
-		//c)    Søke opp karakteren til en gitt student i et gitt kurs.
+		//a) Søke opp vitnemålet til en gitt student.
+		/*TODO*/
 		
-		//Her tester vi ut det vi lager ... :)
+		//b.i) Registrere en ny karakter for en gitt student 
+		//		når karakter ikke finnes fra før.
+		/*TODO*/
+		
+		//b.ii)Registrere en ny karakter for en gitt student
+		//		når karakter finnes fra før.
+		/*TODO*/
+		
+		//c) Søke opp karakteren til en gitt student i et gitt kurs.
+		/*TODO*/
 		
 	}
 }
