@@ -7,6 +7,13 @@ import java.util.List;
 @Entity
 @Table(schema = "forelesning3")
 public class Vitnemal {
+	
+	@Id private int studNr;
+	private LocalDate studiestart;
+	private LocalDate studieslutt;
+	
+	@OneToMany(mappedBy = "vitnemal", fetch = FetchType.EAGER)
+	List<Karakter> karakterer;
 
     @Id
     private int studNr;
