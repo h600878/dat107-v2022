@@ -22,10 +22,12 @@ public class Vitnemal {
 
 	@Override
 	public String toString() {
-		return "Vitnemal [studNr=" + studNr + ", studiestart=" + studiestart + ", studieslutt=" + studieslutt
-				+ ", karakterer=" + karakterer + "]";
+		
+		String karString = "";
+		for (Karakter k : karakterer) {
+			karString += "\n\t" + k;
+		}
+		return "Vitnemal for studNr=" + studNr + ", studiestart=" + studiestart 
+				+ ", studieslutt=" + studieslutt + ":" + karString;
 	}
-	
-	
-
 }

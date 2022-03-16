@@ -27,8 +27,7 @@ public class Karakter {
 
 	@Override
 	public String toString() {
-		return "Karakter [karNr=" + karNr + ", emnekode=" + emnekode + ", eksDato=" + eksDato + ", bokstav=" + bokstav
-				+ "]";
+		return "Karakter [" + emnekode + ", " + eksDato + ", Resultat: " + bokstav + "]";
 	}
 	
 	
