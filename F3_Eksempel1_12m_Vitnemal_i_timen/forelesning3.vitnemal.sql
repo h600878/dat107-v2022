@@ -1,9 +1,10 @@
 -- SQL for en-til-mange-eksemplet gjennomgått i timen onsdag 16. mars 2022 
 
-DROP SCHEMA IF EXISTS forelesning3 CASCADE;
-CREATE SCHEMA forelesning3;
+CREATE SCHEMA IF NOT EXISTS forelesning3;
 SET search_path TO forelesning3;
-    
+
+DROP TABLE IF EXISTS Vitnemal;
+
 CREATE TABLE Vitnemal
 (
 	StudNr INTEGER,

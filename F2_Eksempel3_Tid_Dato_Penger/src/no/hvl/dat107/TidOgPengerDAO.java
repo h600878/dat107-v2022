@@ -9,11 +9,11 @@ import javax.persistence.Persistence;
 
 public class TidOgPengerDAO {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public TidOgPengerDAO() {
         emf = Persistence.createEntityManagerFactory("datatyperPersistenceUnit", 
-        		Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+        		Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
     }
 
     public TidOgPenger hentTidOgPengerMedId(int id) {

@@ -13,7 +13,7 @@ public class Main1_BelopDouble {
         System.out.println(fireKronerOgTiOre);
         System.out.println(tiOre);
         
-        System.out.println(fireKroner);
+        System.out.println(fireKroner); //Skriver ut 3.999999... (forventet: 4.0)
     }
 
 }

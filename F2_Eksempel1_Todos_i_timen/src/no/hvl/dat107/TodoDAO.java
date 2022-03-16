@@ -36,8 +36,10 @@ public class TodoDAO {
 		EntityManager em = emf.createEntityManager();
 		
 		try {
+			//Oppretter en spørring med query, som returnerer en liste med Todo
 			TypedQuery<Todo> query = em.createQuery("SELECT t FROM Todo t", Todo.class);
 
+			//Hvis ingen blir funnet, returner 0
 			return query.getResultList();
 
 		} finally {
@@ -51,6 +53,7 @@ public class TodoDAO {
 		EntityManager em = emf.createEntityManager();
 		
 		try {
+			//Oppretter en spørring som inneholder tekst, :tekst er variabelen tekst
 			TypedQuery<Todo> query = em.createQuery("SELECT t FROM Todo t WHERE t.tekst LIKE :tekst", Todo.class);
 			query.setParameter("tekst", tekst);
 

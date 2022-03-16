@@ -3,13 +3,13 @@
         -- Tabell(er) = person 
 
 -- MERK!!! DROP SCHEMA ... CASCADE sletter alt !!!
-DROP SCHEMA IF EXISTS autogen_id CASCADE;
+--DROP SCHEMA IF EXISTS autogen_id CASCADE;
 
-CREATE SCHEMA autogen_id;
+CREATE SCHEMA IF NOT EXISTS autogen_id;
 SET search_path TO autogen_id;
     
 -- Ikke nødvendig å slette tabellen(e) siden vi har tomt skjema, men ...
--- DROP TABLE person;
+DROP TABLE person;
 
 CREATE TABLE person
 (

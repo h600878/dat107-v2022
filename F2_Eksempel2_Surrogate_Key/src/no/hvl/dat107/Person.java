@@ -10,8 +10,8 @@ import javax.persistence.Table;
 @Table(schema = "autogen_id")
 public class Person {
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //PK
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Autogenerert (SERIAL i postgreSQL)
 	private Integer id;
 	private String navn;
 	
@@ -22,12 +22,12 @@ public class Person {
 	public String getNavn() {
 		return navn;
 	}
+
 	public void setNavn(String navn) {
 		this.navn = navn;
 	}
 	
 	@Override
-	
 	public String toString() {
 		return String.format("Person: id=%d, navn=%s", id, navn);
 	}

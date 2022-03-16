@@ -15,17 +15,22 @@ public class PersonDAO {
     
     public PersonDAO() {
     	emf	= Persistence.createEntityManagerFactory("personPersistenceUnit", 
-		Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+		Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
     }
-    
+
+    /**
+     * Oppretter en ny rad i tabellen og returner primærnøkkelen
+     * @param p En person
+     * @return Primærnøkkelen
+     */
     public int savePerson(Person p) {
         
         EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
+        EntityTransaction tx = em.getTransaction(); //Oppretter transaksjonsobjekt
 
         try {
             tx.begin();
-            em.persist(p);
+            em.persist(p); //Legger til ny rad i tabellen
             tx.commit();
         
         } catch (Throwable e) {

@@ -3,7 +3,7 @@
         -- Tabell(er) = todo 
 
 -- MERK!!! DROP SCHEMA ... CASCADE sletter alt !!!
-DROP SCHEMA IF EXISTS forelesning2 CASCADE;
+CREATE SCHEMA IF NOT EXISTS forelesning2;
 
 CREATE SCHEMA forelesning2;
 SET search_path TO forelesning2;

@@ -13,17 +13,20 @@ public class VitnemalDAO {
 
     public VitnemalDAO() {
         emf = Persistence.createEntityManagerFactory("vitnemalPU",
-		Map.of("javax.persistence.jdbc.password", Passwords.AZURE_PASSWORD));
+		Map.of("javax.persistence.jdbc.password", new Passord().getPassord()));
     }
     
     /* --------------------------------------------------------------------- */
 
-    public /*TODO*/void hentVitnemalForStudent(/*TODO*/) {
+    public Vitnemal hentVitnemalForStudent(int studNr) {
         
         EntityManager em = emf.createEntityManager();
         try {
-        	/*TODO*/
-        } finally {
+
+            return em.find(Vitnemal.class, studNr);
+
+        }
+        finally {
             em.close();
         }
     }

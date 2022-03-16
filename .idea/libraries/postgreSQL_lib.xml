@@ -5,7 +5,9 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.persistence-api-2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/postgresql-42.3.3.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="https://docs.jboss.org/hibernate/jpa/2.2/api" />
+    </JAVADOC>
     <SOURCES />
   </library>
 </component>

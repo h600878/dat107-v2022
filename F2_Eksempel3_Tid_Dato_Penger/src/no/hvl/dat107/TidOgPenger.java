@@ -21,12 +21,13 @@ public class TidOgPenger {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private BigDecimal belop;
+    private BigDecimal belop; //Mer nøyaktig enn double
     private LocalDate dato;
     private LocalTime klokkeslett;
     private LocalDateTime tidsstempel;
 
     public TidOgPenger() {
+
     }
 
     public TidOgPenger(BigDecimal belop, LocalDate dato, LocalTime klokkeslett,

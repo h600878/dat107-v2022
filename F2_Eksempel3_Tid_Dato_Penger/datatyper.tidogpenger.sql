@@ -3,13 +3,11 @@
         -- Tabell(er) = tidogpenger 
 
 -- MERK!!! DROP SCHEMA ... CASCADE sletter alt !!!
-DROP SCHEMA IF EXISTS datatyper CASCADE;
-
-CREATE SCHEMA datatyper;
+CREATE SCHEMA IF NOT EXISTS datatyper;
 SET search_path TO datatyper;
     
 -- Ikke nødvendig å slette tabellen(e) siden vi har tomt skjema, men ...
--- DROP TABLE tidogpenger;
+DROP TABLE IF EXISTS tidogpenger;
 
 -- Se https://www.postgresql.org/docs/8.0/static/datatype.html
 -- for en oversikt over PostgreSQL datatyper
