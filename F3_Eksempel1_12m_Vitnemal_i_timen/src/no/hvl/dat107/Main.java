@@ -13,8 +13,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		VitnemalDAO dao = new VitnemalDAO();
+		
 		//a) Søke opp vitnemålet til en gitt student.
-		/*TODO*/
+		Vitnemal vitnemal = dao.hentVitnemalForStudent(123456);
+		System.out.println(vitnemal);
 		
 		//b.i) Registrere en ny karakter for en gitt student 
 		//		når karakter ikke finnes fra før.
