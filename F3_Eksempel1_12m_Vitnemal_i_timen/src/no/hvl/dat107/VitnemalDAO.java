@@ -38,6 +38,8 @@ public class VitnemalDAO {
         
         try {
         	
+        	/*TODO*/
+        	
         } finally {
             em.close();
         }
