@@ -1,5 +1,6 @@
 package no.hvl.dat107;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -21,14 +22,16 @@ public class Main {
 		
 		//b.i) Registrere en ny karakter for en gitt student 
 		//		når karakter ikke finnes fra før.
-		/*TODO*/
-		
+		Karakter dat107D = dao.registrerKarakterForStudent(123456, "DAT107", LocalDate.now(), 'D');
+		System.out.println(dat107D);
+
 		//b.ii)Registrere en ny karakter for en gitt student
 		//		når karakter finnes fra før.
-		/*TODO*/
-		
+		dat107D = dao.registrerKarakterForStudent(123456, "DAT107", LocalDate.now(), 'D');
+		System.out.println(dat107D);
+
 		//c) Søke opp karakteren til en gitt student i et gitt kurs.
-		/*TODO*/
-		
+		Karakter dat102kar = dao.hentKarakterForStudentIEmne(123456, "DAT102");
+		System.out.println(dat102kar);
 	}
 }

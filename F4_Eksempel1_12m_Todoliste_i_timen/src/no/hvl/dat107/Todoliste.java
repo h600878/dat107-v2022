@@ -15,6 +15,10 @@ public class Todoliste {
 	private int listeId;
 	
 	private String navn;
+
+	public Todoliste() {
+
+	}
 	
 	public Todoliste(String navn) {
 		this.navn = navn;

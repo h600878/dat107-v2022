@@ -7,13 +7,6 @@ import java.util.List;
 @Entity
 @Table(schema = "forelesning3")
 public class Vitnemal {
-	
-	@Id private int studNr;
-	private LocalDate studiestart;
-	private LocalDate studieslutt;
-	
-	@OneToMany(mappedBy = "vitnemal", fetch = FetchType.EAGER)
-	List<Karakter> karakterer;
 
     @Id
     private int studNr;
@@ -21,10 +14,18 @@ public class Vitnemal {
 
     //Gjør karakterer tilgjengelig i denne entiteten
     @OneToMany(mappedBy = "Vitnemal", fetch = FetchType.EAGER) //Henter alltid alle karakterene
-    List<Karakter> karakterer; //Gjør at entiteten også inneholder karakterene
+    private List<Karakter> karakterer; //Gjør at entiteten også inneholder karakterene
 
     public Vitnemal() {
 
+    }
+
+    public void leggTilKarakter(Karakter k) {
+        karakterer.add(k);
+    }
+
+    public void fjernKarakter(Karakter k) {
+        karakterer.remove(k);
     }
 
     public int getStudNr() {

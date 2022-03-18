@@ -20,6 +20,10 @@ public class Todo {
         this.tekst = tekst;
     }
 
+    public Todo() {
+
+    }
+
 	public void setTekst(String tekst) {
 		this.tekst = tekst;
 	}

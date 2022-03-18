@@ -1,8 +1,10 @@
 -- SQL for en-til-mange-eksemplet gjennomgått i timen onsdag 17. mars 2021 
 
-DROP SCHEMA IF EXISTS forelesning4 CASCADE;
-CREATE SCHEMA forelesning4;
+--DROP SCHEMA IF EXISTS forelesning4 CASCADE;
+CREATE SCHEMA IF NOT EXISTS forelesning4;
 SET search_path TO forelesning4;
+
+DROP TABLE IF EXISTS Todo, Todoliste;
     
 CREATE TABLE Todoliste
 (
