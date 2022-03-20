@@ -94,8 +94,18 @@ public class VitnemalDAO {
             em.close();
         }
     }
-   
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

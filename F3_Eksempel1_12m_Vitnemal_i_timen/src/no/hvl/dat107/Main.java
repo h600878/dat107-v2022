@@ -20,6 +20,10 @@ public class Main {
 		//a) Søke opp vitnemålet til en gitt student.
 		System.out.println(dao.hentVitnemalForStudent(123456));
 		
+		//c) Søke opp karakteren til en gitt student i et gitt kurs.
+		Karakter dat100kar = dao.hentKarakterForStudentIEmne(123456, "DAT102");
+		System.out.println(dat100kar);
+		
 		//b.i) Registrere en ny karakter for en gitt student 
 		//		når karakter ikke finnes fra før.
 		Karakter dat107D = dao.registrerKarakterForStudent(123456, "DAT107", LocalDate.now(), 'D');
@@ -35,3 +39,8 @@ public class Main {
 		System.out.println(dat102kar);
 	}
 }
+
+
+
+
+
