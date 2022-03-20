@@ -65,7 +65,7 @@ public class VitnemalDAO {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         
-        try { //TODO virker ikke når karakteren er i databasen fra før av!
+        try {
         	tx.begin(); //Starter transaksjon
 
             //Henter gammel karakter og vitnemål, om det fins
@@ -77,6 +77,8 @@ public class VitnemalDAO {
                 //Fjerner den gamle karakteren
                 v.fjernKarakter(k);
                 em.remove(em.merge(k));
+
+                em.flush(); //Fjerner karakteren fra databasen med engang før commit
             }
             //Oppretter den nye karakteren
             k = new Karakter(emnekode, eksDato, bokstav);
