@@ -7,10 +7,11 @@
 -- Hvis vi velger FK i Rom = AnsNr vil rom uten ansatt ha NULL for denne.
 -- Velger å legge FK i Ansatt
 
-DROP SCHEMA IF EXISTS forelesning4 CASCADE;
-CREATE SCHEMA forelesning4;
+CREATE SCHEMA IF NOT EXISTS forelesning4;
 SET search_path TO forelesning4;
-    
+
+DROP TABLE IF EXISTS Rom, Ansatt;
+
 CREATE TABLE Rom
 (
     RomNr       CHAR(4),

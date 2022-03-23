@@ -1,9 +1,9 @@
 -- Mange-til-mange-eksempel forelesning tirsdag 22. mars 2021.
 
--- MERK!!! DROP SCHEMA ... CASCADE sletter alt !!!
-DROP SCHEMA IF EXISTS forelesning5a CASCADE;
-CREATE SCHEMA forelesning5a;
+CREATE SCHEMA IF NOT EXISTS forelesning5a;
 SET search_path TO forelesning5a;
+
+DROP TABLE IF EXISTS Ansatt, Prosjekt, Prosjektdeltagelse;
 
 CREATE TABLE Ansatt
 (

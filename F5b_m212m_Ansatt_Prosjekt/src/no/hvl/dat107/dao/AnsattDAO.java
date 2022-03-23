@@ -31,23 +31,24 @@ public class AnsattDAO {
         return ansatt;
     }
 
-    public void registrerProsjektdeltagelse(Ansatt a, Prosjekt p) {
+    public void registrerProsjektdeltagelse(int ansattId, int prosjektId) {
         
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            
-            a = em.merge(a);
-            p = em.merge(p);
-            
+
+            Ansatt a = em.find(Ansatt.class, ansattId);
+            Prosjekt p = em.find(Prosjekt.class, prosjektId);
+
+            //Legger til i ProsjektDeltakelse
             Prosjektdeltagelse pd = new Prosjektdeltagelse(a, p, 0);
 
-//Flyttet til konstruktør            
+//            Flyttet til konstruktør
 //            a.leggTilProsjektdeltagelse(pd);
 //            p.leggTilProsjektdeltagelse(pd);
             
-            em.persist(pd);
+            em.persist(pd); //Pusher til databasen
             
             tx.commit();
         } catch (Throwable e) {

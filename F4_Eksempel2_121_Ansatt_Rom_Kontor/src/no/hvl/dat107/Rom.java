@@ -13,7 +13,7 @@ public class Rom {
     private String romNr;
     private double kvm;
     
-    @OneToOne(mappedBy = "kontor")
+    @OneToOne(mappedBy = "kontor") //En-til-en laget i Ansatt
     private Ansatt ansatt;
 
     @Override
@@ -26,8 +26,7 @@ public class Rom {
     public String getRomNr() {
         return romNr;
     }
-    
-    
+
 }
 
 

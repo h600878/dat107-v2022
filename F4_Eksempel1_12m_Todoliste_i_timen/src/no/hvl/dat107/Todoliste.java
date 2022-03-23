@@ -1,10 +1,8 @@
 package no.hvl.dat107;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Todoliste", schema = "forelesning4")
@@ -16,8 +14,26 @@ public class Todoliste {
 	
 	private String navn;
 
+	//Allerede definert i Todo, variabel liste,
+	// FetchType.EAGER gjør at alle elementer i listen blir skrevet ut
+	@OneToMany(mappedBy = "liste", fetch = FetchType.EAGER,
+			cascade = {CascadeType.PERSIST, CascadeType.MERGE}, //...
+			orphanRemoval = true) //...
+	@OrderBy("tekst asc") //Sorter etter stigende
+	private List<Todo> todos = new ArrayList<>();
+
 	public Todoliste() {
 
+	}
+
+	public void leggTil(Todo todo) {
+		todos.add(todo);
+		todo.setListe(this); //Lager en kobling til liste i Todo
+	}
+
+	public void fjern(Todo todo) {
+		todos.remove(todo);
+		todo.setListe(null);
 	}
 	
 	public Todoliste(String navn) {

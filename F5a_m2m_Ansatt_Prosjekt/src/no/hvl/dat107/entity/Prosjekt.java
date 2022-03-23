@@ -22,9 +22,9 @@ public class Prosjekt {
     private String navn;
     
     // Vi velger Prosjekt som owning-side. Vi kunne også valgt Ansatt. Hipp-som-happ.
-    @ManyToMany
-    @JoinTable(
-            name = "forelesning5a.Prosjektdeltagelse", // NB! Må ha med schema !!!
+    @ManyToMany //Mange-til-mange
+    @JoinTable( //Kobler sammen to tabeller ved kolonnene beskrevet under
+            name = "Prosjektdeltagelse",
             joinColumns = @JoinColumn(name="Prosjekt_Id"),
             inverseJoinColumns = @JoinColumn(name="Ansatt_Id"))
     private List<Ansatt> ansatte;

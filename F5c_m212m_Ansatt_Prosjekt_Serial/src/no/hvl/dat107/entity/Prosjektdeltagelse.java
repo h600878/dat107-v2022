@@ -33,7 +33,7 @@ public class Prosjektdeltagelse {
         this.prosjekt = prosjekt;
         this.timer = timer;
         
-        //Hvis vi gjør dette her slipper vi å gjøre det i EAO
+        //Hvis vi gjÃ¸r dette her slipper vi Ã¥ gjÃ¸re det i EAO
         ansatt.leggTilProsjektdeltagelse(this);
         prosjekt.leggTilProsjektdeltagelse(this);
     }

@@ -16,12 +16,12 @@ public class Prosjektdeltagelse {
     
     @Id
     @ManyToOne
-    @JoinColumn(name="Ansatt_Id")
+    @JoinColumn(name="Ansatt_Id")  //Slår sammen fra Ansatt
     private Ansatt ansatt;
     
     @Id
     @ManyToOne
-    @JoinColumn(name="Prosjekt_Id")
+    @JoinColumn(name="Prosjekt_Id") //Slår sammen fra Prosjekt
     private Prosjekt prosjekt;
 
     public Prosjektdeltagelse() {}
@@ -30,7 +30,8 @@ public class Prosjektdeltagelse {
         this.ansatt = ansatt;
         this.prosjekt = prosjekt;
         this.timer = timer;
-        
+
+        //Oppdaterer Ansatt og Prosjekt
         ansatt.leggTilProsjektdeltagelse(this);
         prosjekt.leggTilProsjektdeltagelse(this);
     }

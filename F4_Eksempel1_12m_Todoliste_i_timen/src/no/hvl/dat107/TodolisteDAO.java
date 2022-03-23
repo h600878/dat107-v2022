@@ -5,16 +5,22 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import java.util.List;
+import java.util.Map;
 
 public class TodolisteDAO {
 
     private EntityManagerFactory emf;
 
     public TodolisteDAO() {
-        emf = Persistence.createEntityManagerFactory("kjell");
+        LogIn logIn = new LogIn();
+        emf = Persistence.createEntityManagerFactory("kjell",
+                Map.of("javax.persistence.jdbc.url", logIn.getURL(),
+                        "javax.persistence.jdbc.user", logIn.getBrukernavn(),
+                        "javax.persistence.jdbc.password", logIn.getPassord()));
     }
 
-    public /*TODO*/void hentListe(/*TODO*/) {
+    public List<Todo> hentListe(int listeId) {
         EntityManager em = emf.createEntityManager();
         try {
         	
@@ -23,9 +29,27 @@ public class TodolisteDAO {
         } finally {
             em.close();
         }
+        return null;
     }
 
-    public /*TODO*/void lagreListe(/*TODO*/) {
+    public void lagreListe(Todoliste liste) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            
+            em.persist(liste);
+            
+            tx.commit();
+        } catch (Throwable e) {
+            e.printStackTrace();
+            tx.rollback();
+        } finally {
+            em.close();
+        }
+    }
+
+    public void slettListe(Todoliste list) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
@@ -42,24 +66,7 @@ public class TodolisteDAO {
         }
     }
 
-    public /*TODO*/void slettListe(/*TODO*/) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            
-            /*TODO*/
-            
-            tx.commit();
-        } catch (Throwable e) {
-            e.printStackTrace();
-            tx.rollback();
-        } finally {
-            em.close();
-        }
-    }
-
-    public /*TODO*/void oppdaterListe(/*TODO*/) {
+    public /*TODO*/void oppdaterListe(Todoliste liste) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
@@ -102,4 +109,15 @@ public class TodolisteDAO {
         }
     }
 
+    public List<Todo> finnListe(int listeId) {
+        return null;
+    }
+
+    public boolean finnListePaaNavn(String gøy_husarbeid) {
+        return false;
+    }
+
+    public boolean finnTodosIListe(int listeId) {
+        return false;
+    }
 }

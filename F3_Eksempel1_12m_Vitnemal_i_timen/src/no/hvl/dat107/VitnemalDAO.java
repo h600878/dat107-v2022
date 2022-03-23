@@ -71,14 +71,14 @@ public class VitnemalDAO {
             //Henter gammel karakter og vitnemål, om det fins
             Karakter k = hentKarakterForStudentIEmne(studNr, emnekode);
             Vitnemal v = hentVitnemalForStudent(studNr);
-            em.merge(v);
+            em.merge(v); //Oppdaterer vitnemål
 
             if (k != null) {
                 //Fjerner den gamle karakteren
                 v.fjernKarakter(k);
                 em.remove(em.merge(k));
 
-                em.flush(); //Fjerner karakteren fra databasen med engang før commit
+                em.flush(); //Oppdaterer databasen nå
             }
             //Oppretter den nye karakteren
             k = new Karakter(emnekode, eksDato, bokstav);

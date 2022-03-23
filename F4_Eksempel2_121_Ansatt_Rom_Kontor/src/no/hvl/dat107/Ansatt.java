@@ -18,16 +18,9 @@ public class Ansatt {
     private String fornavn;
     private String etternavn;
     
-    @OneToOne
+    @OneToOne //En-til-en
     @JoinColumn(name = "romNr", referencedColumnName = "romNr")
     private Rom kontor;
-
-    @Override
-    public String toString() {
-        String romString = kontor != null ? ", kontor=" + kontor.getRomNr() : "";
-        return "Ansatt [ansNr=" + ansNr + ", fornavn=" + fornavn 
-                + ", etternavn=" + etternavn + romString + "]";
-    }
 
     public int getAnsNr() {
         return ansNr;
@@ -40,9 +33,13 @@ public class Ansatt {
     public String getEtternavn() {
         return etternavn;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        String romString = kontor != null ? ", kontor=" + kontor.getRomNr() : "";
+        return "Ansatt [ansNr=" + ansNr + ", fornavn=" + fornavn
+                + ", etternavn=" + etternavn + romString + "]";
+    }
 }
 
 

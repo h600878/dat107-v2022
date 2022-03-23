@@ -5,15 +5,22 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import no.hvl.dat107.LogIn;
 import no.hvl.dat107.entity.Ansatt;
 import no.hvl.dat107.entity.Prosjekt;
+
+import java.util.Map;
 
 public class AnsattDAO {
 
     private EntityManagerFactory emf;
 
     public AnsattDAO() {
-        emf = Persistence.createEntityManagerFactory("AnsattProsjektPU");
+        LogIn logIn = new LogIn();
+        emf = Persistence.createEntityManagerFactory("ansattPersistanceUnit",
+                Map.of("javax.persistence.jdbc.url", logIn.getURL(),
+                        "javax.persistence.jdbc.user", logIn.getBrukernavn(),
+                        "javax.persistence.jdbc.password", logIn.getPassord()));
     }
     
     public Ansatt finnAnsattMedId(int id) {
