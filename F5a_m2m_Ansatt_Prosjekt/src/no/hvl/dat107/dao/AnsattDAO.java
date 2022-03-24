@@ -59,35 +59,6 @@ public class AnsattDAO {
             em.close();
         }
     }
-    
-    public void registrerProsjektdeltagelse(Ansatt a, Prosjekt p) {
-    	
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        try {
-            tx.begin();
-            
-            a = em.find(Ansatt.class, a.getId());
-            p = em.find(Prosjekt.class, p.getId());
-
-// Alternativt:            
-//            a = em.merge(a);
-//            p = em.merge(p);
-            
-            a.leggTilProsjekt(p);
-            p.leggTilAnsatt(a);
-            
-            tx.commit();
-        } catch (Throwable e) {
-            e.printStackTrace();
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-        } finally {
-            em.close();
-        }
-        
-    }
 
     public void slettProsjektdeltagelse(int ansattId, int prosjektId) {
     	

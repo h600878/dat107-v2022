@@ -62,19 +62,19 @@ public class AnsattDAO {
         
     }
 
-    public void slettProsjektdeltagelse(Ansatt a, Prosjekt p) {
+    public void slettProsjektdeltagelse(int ansattId, int prosjektId) {
     	
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             
-            ProsjektdeltagelsePK pk = new ProsjektdeltagelsePK(a.getId(), p.getId());
+            ProsjektdeltagelsePK pk = new ProsjektdeltagelsePK(ansattId, prosjektId);
             
             Prosjektdeltagelse pd = em.find(Prosjektdeltagelse.class, pk);
             
-            a = em.merge(a);
-            p = em.merge(p);
+            Ansatt a= em.find(Ansatt.class, ansattId);
+            Prosjekt p = em.find(Prosjekt.class, prosjektId);
             
             a.fjernProsjektdeltagelse(pd);
             p.fjernProsjektdeltagelse(pd);
