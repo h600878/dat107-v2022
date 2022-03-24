@@ -14,24 +14,24 @@ public class TodolisteDAO {
         emf = Persistence.createEntityManagerFactory("kjell");
     }
 
-    public /*TODO*/void hentListe(/*TODO*/) {
+    public Todoliste hentListe(int id) {
         EntityManager em = emf.createEntityManager();
         try {
         	
-        	/*TODO*/
+        	return em.find(Todoliste.class, id);
         	
         } finally {
             em.close();
         }
     }
 
-    public /*TODO*/void lagreListe(/*TODO*/) {
+    public void lagreListe(Todoliste liste) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
             
-            /*TODO*/
+            em.persist(liste);
             
             tx.commit();
         } catch (Throwable e) {

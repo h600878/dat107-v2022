@@ -22,17 +22,17 @@ public class Main {
         Todo vaskeOpp = new Todo("Vaske opp");
         Todo stovsuge = new Todo("Støvsuge");
         
-//        husarbeid.leggTil(rydde);
-//        husarbeid.leggTil(vaskeOpp);
-//        husarbeid.leggTil(stovsuge);
+        husarbeid.leggTil(rydde);
+        husarbeid.leggTil(vaskeOpp);
+        husarbeid.leggTil(stovsuge);
         
-//        todolisteDAO.lagreListe(husarbeid);
-//        int listeId = husarbeid.getListeId();
+        todolisteDAO.lagreListe(husarbeid);
+        int listeId = husarbeid.getListeId();
        
-//        System.out.println("Etter lagreListe():");
-//        System.out.println(todolisteDAO.hentListe(listeId));
+        System.out.println("Etter lagreListe():");
+        System.out.println(todolisteDAO.hentListe(listeId));
         
-//        pauseOgSjekkDatabasen("\nSjekk at vi har fått oppdatert databasen riktig.");
+        pauseOgSjekkDatabasen("\nSjekk at vi har fått oppdatert databasen riktig.");
         
         /* ----------------------------------------------------------------- */
         

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @IdClass(ProsjektdeltagelsePK.class)
 public class Prosjektdeltagelse {
 
-    private int timer;
+    private int timer = 0;
     
     @Id
     @ManyToOne
@@ -26,10 +26,9 @@ public class Prosjektdeltagelse {
 
     public Prosjektdeltagelse() {}
     
-    public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt, int timer) {
+    public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt) {
         this.ansatt = ansatt;
         this.prosjekt = prosjekt;
-        this.timer = timer;
         
         ansatt.leggTilProsjektdeltagelse(this);
         prosjekt.leggTilProsjektdeltagelse(this);
