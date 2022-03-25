@@ -1,4 +1,4 @@
--- Mange-til-mange-eksempel forelesning tirsdag 22. mars 2021.
+-- Mange-til-mange-eksempel forelesning onsdag 23. mars 2022
 
 CREATE SCHEMA IF NOT EXISTS forelesning5a;
 SET search_path TO forelesning5a;

@@ -1,4 +1,4 @@
--- SQL for en-til-en-eksemplet gjennomg�tt i timen fredag 3. april 2020
+-- SQL for en-til-en-eksemplet gjennomg�tt i timen onsdag 23. mars 2022
 
 -- Uten koblingstabell.
 -- Koblingstabell for en-til-en-forhold er mulig, men gjør ting mer komplisert.
