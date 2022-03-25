@@ -6,6 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
           <factory-entry name="AnsattProsjektPU" value="9e446a66-aa5f-40e1-943d-f0b9026f7521" />
+          <factory-entry name="ansattPersistanceUnit" value="9e446a66-aa5f-40e1-943d-f0b9026f7521" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
@@ -20,6 +21,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="postgreSQL lib" level="project" />
-    <orderEntry type="module" module-name="dat107-v2022" />
   </component>
 </module>

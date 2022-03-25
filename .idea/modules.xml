@@ -10,12 +10,17 @@
       <module fileurl="file://$PROJECT_DIR$/F2_Eksempel3_Tid_Dato_Penger/F2_Eksempel3_Tid_Dato_Penger.iml" filepath="$PROJECT_DIR$/F2_Eksempel3_Tid_Dato_Penger/F2_Eksempel3_Tid_Dato_Penger.iml" />
       <module fileurl="file://$PROJECT_DIR$/F3_Eksempel1_12m_Vitnemal_i_timen/F3_Eksempel1_12m_Vitnemal_i_timen.iml" filepath="$PROJECT_DIR$/F3_Eksempel1_12m_Vitnemal_i_timen/F3_Eksempel1_12m_Vitnemal_i_timen.iml" />
       <module fileurl="file://$PROJECT_DIR$/F4_Eksempel1_12m_Todoliste_i_timen/F4_Eksempel1_12m_Todoliste_i_timen.iml" filepath="$PROJECT_DIR$/F4_Eksempel1_12m_Todoliste_i_timen/F4_Eksempel1_12m_Todoliste_i_timen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F4_Eksempel1_12m_Todoliste_losning/F4_Eksempel1_12m_Todoliste_losning.iml" filepath="$PROJECT_DIR$/F4_Eksempel1_12m_Todoliste_losning/F4_Eksempel1_12m_Todoliste_losning.iml" />
       <module fileurl="file://$PROJECT_DIR$/F4_Eksempel2_121_Ansatt_Rom_Kontor/F4_Eksempel2_121_Ansatt_Rom_Kontor.iml" filepath="$PROJECT_DIR$/F4_Eksempel2_121_Ansatt_Rom_Kontor/F4_Eksempel2_121_Ansatt_Rom_Kontor.iml" />
       <module fileurl="file://$PROJECT_DIR$/F5a_m2m_Ansatt_Prosjekt/F5a_m2m_Ansatt_Prosjekt.iml" filepath="$PROJECT_DIR$/F5a_m2m_Ansatt_Prosjekt/F5a_m2m_Ansatt_Prosjekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/F5b_m212m_Ansatt_Prosjekt/F5b_m212m_Ansatt_Prosjekt.iml" filepath="$PROJECT_DIR$/F5b_m212m_Ansatt_Prosjekt/F5b_m212m_Ansatt_Prosjekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/F5c_m212m_Ansatt_Prosjekt_Serial/F5c_m212m_Ansatt_Prosjekt_Serial.iml" filepath="$PROJECT_DIR$/F5c_m212m_Ansatt_Prosjekt_Serial/F5c_m212m_Ansatt_Prosjekt_Serial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F5d_Hona_og_egget/F5d_Hona_og_egget.iml" filepath="$PROJECT_DIR$/F5d_Hona_og_egget/F5d_Hona_og_egget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F6a_Subtyper_JOINED/F6a_Subtyper_JOINED.iml" filepath="$PROJECT_DIR$/F6a_Subtyper_JOINED/F6a_Subtyper_JOINED.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F6b_Subtyper_SINGLE_TABLE/F6b_Subtyper_SINGLE_TABLE.iml" filepath="$PROJECT_DIR$/F6b_Subtyper_SINGLE_TABLE/F6b_Subtyper_SINGLE_TABLE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F6c_Subtyper_TABLE_PER_CLASS/F6c_Subtyper_TABLE_PER_CLASS.iml" filepath="$PROJECT_DIR$/F6c_Subtyper_TABLE_PER_CLASS/F6c_Subtyper_TABLE_PER_CLASS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hallo_DAT107/Hallo_DAT107.iml" filepath="$PROJECT_DIR$/Hallo_DAT107/Hallo_DAT107.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/dat107-v2022.iml" filepath="$PROJECT_DIR$/.idea/dat107-v2022.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dat107-v2022.iml" filepath="$PROJECT_DIR$/dat107-v2022.iml" />
     </modules>
   </component>
 </project>

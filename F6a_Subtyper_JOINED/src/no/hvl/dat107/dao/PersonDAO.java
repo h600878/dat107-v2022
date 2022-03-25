@@ -24,7 +24,7 @@ public class PersonDAO {
 
         Person person = null;
         try {
-            person = em.find(Person.class, fNr);
+            person = em.find(Person.class, fNr); //Søker også i subklassene
         } finally {
             em.close();
         }

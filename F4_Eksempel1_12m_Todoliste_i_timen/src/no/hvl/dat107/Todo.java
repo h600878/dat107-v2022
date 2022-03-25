@@ -35,10 +35,6 @@ public class Todo {
     public void setTekst(String tekst) {
 		this.tekst = tekst;
 	}
-	
-    public void setListe(Todoliste liste) {
-		this.liste = liste;
-	}
 
 	@Override
     public String toString() {

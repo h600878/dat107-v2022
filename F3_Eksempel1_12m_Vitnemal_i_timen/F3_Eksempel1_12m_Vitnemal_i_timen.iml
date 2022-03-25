@@ -20,6 +20,5 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="postgreSQL lib" level="project" />
-    <orderEntry type="module" module-name="dat107-v2022" />
   </component>
 </module>

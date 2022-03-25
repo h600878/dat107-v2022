@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "forelesning6a")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED) //Definerer som supertype
 public class Person {
 
     @Id

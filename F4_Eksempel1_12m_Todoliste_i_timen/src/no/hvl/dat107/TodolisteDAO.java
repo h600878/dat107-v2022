@@ -20,16 +20,15 @@ public class TodolisteDAO {
                         "javax.persistence.jdbc.password", logIn.getPassord()));
     }
 
-    public List<Todo> hentListe(int listeId) {
+    public Todoliste hentListe(int listeId) {
         EntityManager em = emf.createEntityManager();
         try {
         	
-        	return em.find(Todoliste.class, id);
+        	return em.find(Todoliste.class, listeId);
         	
         } finally {
             em.close();
         }
-        return null;
     }
 
     public void lagreListe(Todoliste liste) {

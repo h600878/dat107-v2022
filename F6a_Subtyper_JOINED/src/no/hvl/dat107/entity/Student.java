@@ -6,12 +6,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "forelesning6a")
-@PrimaryKeyJoinColumn(referencedColumnName = "FNr")
+@PrimaryKeyJoinColumn(referencedColumnName = "FNr") //Knyttet sammen via kolonne FNr
 public class Student extends Person { 
 
     private String studium;
     
-    public Student() {}
+    public Student() {
+
+    }
 
     public Student(String fNr, String fornavn, String etternavn, String studium) {
         super(fNr, fornavn, etternavn);

@@ -26,6 +26,10 @@ public class Todoliste {
 
 	}
 
+	public Todoliste(String navn) {
+		this.navn = navn;
+	}
+
 	public void leggTil(Todo todo) {
 		todos.add(todo);
 		todo.setListe(this); //Lager en kobling til liste i Todo
@@ -35,23 +39,7 @@ public class Todoliste {
 		todos.remove(todo);
 		todo.setListe(null);
 	}
-	
-	@OneToMany(mappedBy = "liste",
-			fetch = FetchType.EAGER,
-			cascade = CascadeType.PERSIST)
-	List<Todo> todos = new ArrayList<>();
-	
-	public Todoliste() {}
-	
-	public Todoliste(String navn) {
-		this.navn = navn;
-	}
-	
-	public void leggTil(Todo todo) {
-		todos.add(todo);
-		todo.setListe(this);
-	}
-	
+
 	public int getListeId() {
 		return listeId;
 	}
@@ -65,9 +53,4 @@ public class Todoliste {
 		return "Todoliste [listeId=" + listeId + ", navn=" + navn + ", todos=" + todos + "]";
 	}
 
-
 }
-
-
-
-
