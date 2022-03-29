@@ -26,11 +26,11 @@ CREATE TABLE Prosjekt
 CREATE TABLE Prosjektdeltagelse
 (
   Prosjektdeltagelse_Id SERIAL,
-  Ansatt_Id INTEGER,
-  Prosjekt_Id INTEGER,
+  Ansatt_Id INTEGER NOT NULL,
+  Prosjekt_Id INTEGER NOT NULL,
   Timer     INTEGER,
   CONSTRAINT Prosjektdeltagelse_PK PRIMARY KEY (Prosjektdeltagelse_Id),
-  CONSTRAINT AnsattProsjekt_Unik UNIQUE NOT NULL (Ansatt_Id, Prosjekt_Id),
+  CONSTRAINT AnsattProsjekt_Unik UNIQUE (Ansatt_Id, Prosjekt_Id),
   CONSTRAINT Ansatt_FK FOREIGN KEY (Ansatt_Id) REFERENCES Ansatt(Id),
   CONSTRAINT Prosjekt_FK FOREIGN KEY (Prosjekt_Id) REFERENCES Prosjekt(Id)  
 );

@@ -26,14 +26,16 @@ public class Prosjektdeltagelse {
     @JoinColumn(name="Prosjekt_Id")
     private Prosjekt prosjekt;
 
-    public Prosjektdeltagelse() {}
+    public Prosjektdeltagelse() {
+
+    }
     
     public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt, int timer) {
         this.ansatt = ansatt;
         this.prosjekt = prosjekt;
         this.timer = timer;
         
-        //Hvis vi gjør dette her slipper vi å gjøre det i EAO
+        //Hvis vi gjør dette her slipper vi å gjøre det i DAO
         ansatt.leggTilProsjektdeltagelse(this);
         prosjekt.leggTilProsjektdeltagelse(this);
     }

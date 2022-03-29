@@ -4,14 +4,21 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import no.hvl.dat107.LogIn;
 import no.hvl.dat107.entity.Prosjekt;
+
+import java.util.Map;
 
 public class ProsjektDAO {
 
     private EntityManagerFactory emf;
 
     public ProsjektDAO() {
-        emf = Persistence.createEntityManagerFactory("AnsattProsjektPU");
+        LogIn logIn = new LogIn();
+        emf = Persistence.createEntityManagerFactory("AnsattProsjektPU",
+                Map.of("javax.persistence.jdbc.url", logIn.getURL(),
+                        "javax.persistence.jdbc.user", logIn.getBrukernavn(),
+                        "javax.persistence.jdbc.password", logIn.getPassord()));
     }
 
     public Prosjekt finnProsjektMedId(int id) {

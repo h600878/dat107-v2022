@@ -7,16 +7,23 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import no.hvl.dat107.LogIn;
 import no.hvl.dat107.entity.Ansatt;
 import no.hvl.dat107.entity.Prosjekt;
 import no.hvl.dat107.entity.Prosjektdeltagelse;
+
+import java.util.Map;
 
 public class AnsattDAO {
 
     private EntityManagerFactory emf;
 
     public AnsattDAO() {
-        emf = Persistence.createEntityManagerFactory("AnsattProsjektPU");
+        LogIn logIn = new LogIn();
+        emf = Persistence.createEntityManagerFactory("AnsattProsjektPU",
+                Map.of("javax.persistence.jdbc.url", logIn.getURL(),
+                        "javax.persistence.jdbc.user", logIn.getBrukernavn(),
+                        "javax.persistence.jdbc.password", logIn.getPassord()));
     }
     
     public Ansatt finnAnsattMedId(int id) {

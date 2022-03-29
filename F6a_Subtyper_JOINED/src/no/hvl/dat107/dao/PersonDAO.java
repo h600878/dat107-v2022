@@ -1,6 +1,7 @@
 package no.hvl.dat107.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -8,6 +9,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import no.hvl.dat107.LogIn;
 import no.hvl.dat107.entity.Person;
 
 public class PersonDAO {
@@ -15,7 +17,11 @@ public class PersonDAO {
     private EntityManagerFactory emf;
 
     public PersonDAO() {
-        emf = Persistence.createEntityManagerFactory("PersonProsjektPU");
+        LogIn logIn = new LogIn();
+        emf = Persistence.createEntityManagerFactory("PersonProsjektPU",
+                Map.of("javax.persistence.jdbc.url", logIn.getURL(),
+                        "javax.persistence.jdbc.user", logIn.getBrukernavn(),
+                        "javax.persistence.jdbc.password", logIn.getPassord()));
     }
     
     public Person finnPersonMedFNr(String fNr) {
