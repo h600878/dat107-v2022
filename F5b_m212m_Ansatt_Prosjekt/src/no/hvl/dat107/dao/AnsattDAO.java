@@ -12,27 +12,28 @@ import no.hvl.dat107.entity.ProsjektdeltagelsePK;
 
 public class AnsattDAO {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public AnsattDAO() {
         emf = Persistence.createEntityManagerFactory("AnsattProsjektPU");
     }
-    
+
     public Ansatt finnAnsattMedId(int id) {
 
         EntityManager em = emf.createEntityManager();
 
-        Ansatt ansatt = null;
+        Ansatt ansatt;
         try {
             ansatt = em.find(Ansatt.class, id);
-        } finally {
+        }
+        finally {
             em.close();
         }
         return ansatt;
     }
 
     public void registrerProsjektdeltagelse(int ansattId, int prosjektId) {
-        
+
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
@@ -42,56 +43,60 @@ public class AnsattDAO {
             Prosjekt p = em.find(Prosjekt.class, prosjektId);
 
             //Legger til i ProsjektDeltakelse
-            Prosjektdeltagelse pd = new Prosjektdeltagelse(a, p, 0);
+            Prosjektdeltagelse pd = new Prosjektdeltagelse(a, p);
 
 //            Flyttet til konstruktør
 //            a.leggTilProsjektdeltagelse(pd);
 //            p.leggTilProsjektdeltagelse(pd);
-            
+
             em.persist(pd); //Pusher til databasen
-            
+
             tx.commit();
-        } catch (Throwable e) {
+        }
+        catch (Throwable e) {
             e.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-        } finally {
+        }
+        finally {
             em.close();
         }
-        
+
     }
 
     public void slettProsjektdeltagelse(int ansattId, int prosjektId) {
-    	
+
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            
+
             ProsjektdeltagelsePK pk = new ProsjektdeltagelsePK(ansattId, prosjektId);
-            
+
             Prosjektdeltagelse pd = em.find(Prosjektdeltagelse.class, pk);
-            
-            Ansatt a= em.find(Ansatt.class, ansattId);
+
+            Ansatt a = em.find(Ansatt.class, ansattId);
             Prosjekt p = em.find(Prosjekt.class, prosjektId);
-            
+
             a.fjernProsjektdeltagelse(pd);
             p.fjernProsjektdeltagelse(pd);
-            
+
             em.remove(pd);
-            
+
             tx.commit();
-        } catch (Throwable e) {
+        }
+        catch (Throwable e) {
             e.printStackTrace();
             if (tx.isActive()) {
                 tx.rollback();
             }
-        } finally {
+        }
+        finally {
             em.close();
         }
     }
-    
+
 }
 
 

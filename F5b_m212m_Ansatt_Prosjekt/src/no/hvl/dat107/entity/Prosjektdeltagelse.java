@@ -1,43 +1,40 @@
 package no.hvl.dat107.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity 
+@Entity
 @Table(schema = "forelesning5b")
-@IdClass(ProsjektdeltagelsePK.class)
 public class Prosjektdeltagelse {
 
-    private int timer = 0;
-    
-    @Id
+    private int timer;
+
+    @EmbeddedId
+    ProsjektdeltagelsePK id;
+
     @ManyToOne
-    @JoinColumn(name="Ansatt_Id")  //Slår sammen fra Ansatt
+    @MapsId("ansatt")
+    @JoinColumn(name = "ansatt_Id")  //Slår sammen fra Ansatt
     private Ansatt ansatt;
-    
-    @Id
+
     @ManyToOne
-    @JoinColumn(name="Prosjekt_Id") //Slår sammen fra Prosjekt
+    @MapsId("prosjekt")
+    @JoinColumn(name = "prosjekt_Id") //Slår sammen fra Prosjekt
     private Prosjekt prosjekt;
 
     public Prosjektdeltagelse() {}
-    
+
     public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt) {
         this.ansatt = ansatt;
         this.prosjekt = prosjekt;
-        this.timer = timer;
+        this.timer = 0;
 
-        //Oppdaterer Ansatt og Prosjekt
+        // Oppdaterer Ansatt og Prosjekt
         ansatt.leggTilProsjektdeltagelse(this);
         prosjekt.leggTilProsjektdeltagelse(this);
     }
-    
+
     public void skrivUt(String innrykk) {
-        System.out.printf("%sDeltagelse: %s %s, %s, %d timer", innrykk, 
+        System.out.printf("%sDeltagelse: %s %s, %s, %d timer", innrykk,
                 ansatt.getFornavn(), ansatt.getEtternavn(), prosjekt.getNavn(), timer);
     }
 
@@ -46,8 +43,8 @@ public class Prosjektdeltagelse {
         return "IKKE I BRUK";
 //        return "PD(" + ansatt.getId() + ", " + prosjekt.getId() + "): " + timer + " timer";
     }
-    
-    
+
+
 }
 
 
