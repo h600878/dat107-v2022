@@ -8,7 +8,7 @@ import no.hvl.dat107.entity.Prosjekt;
 
 public class ProsjektDAO {
 
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
     public ProsjektDAO() {
         emf = Persistence.createEntityManagerFactory("AnsattProsjektPU");
@@ -18,12 +18,11 @@ public class ProsjektDAO {
 
         EntityManager em = emf.createEntityManager();
 
-        Prosjekt prosjekt = null;
         try {
-            prosjekt = em.find(Prosjekt.class, id);
-        } finally {
+            return em.find(Prosjekt.class, id);
+        }
+        finally {
             em.close();
         }
-        return prosjekt;
     }
 }

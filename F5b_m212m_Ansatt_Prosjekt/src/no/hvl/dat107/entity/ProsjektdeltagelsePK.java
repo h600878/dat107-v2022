@@ -1,13 +1,11 @@
 package no.hvl.dat107.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 /**
  * Denne klassen inneholder primærnøkler
  */
-@Embeddable
 public class ProsjektdeltagelsePK implements Serializable {
 
     @Column(name = "ansatt_Id")

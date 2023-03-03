@@ -4,20 +4,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(schema = "forelesning5b")
+@IdClass(ProsjektdeltagelsePK.class)
 public class Prosjektdeltagelse {
 
     private int timer;
 
-    @EmbeddedId
-    ProsjektdeltagelsePK id;
-
+    @Id
     @ManyToOne
-    @MapsId("ansatt")
     @JoinColumn(name = "ansatt_Id")  //Slår sammen fra Ansatt
     private Ansatt ansatt;
 
+    @Id
     @ManyToOne
-    @MapsId("prosjekt")
     @JoinColumn(name = "prosjekt_Id") //Slår sammen fra Prosjekt
     private Prosjekt prosjekt;
 

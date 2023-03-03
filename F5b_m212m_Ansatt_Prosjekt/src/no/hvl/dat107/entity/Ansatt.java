@@ -16,17 +16,17 @@ public class Ansatt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String fornavn;
     private String etternavn;
-    
-    @OneToMany(mappedBy="ansatt")
+
+    @OneToMany(mappedBy = "ansatt")
     private List<Prosjektdeltagelse> deltagelser;
-    
+
     public void skrivUt(String innrykk) {
         System.out.printf("%sAnsatt nr %d: %s %s", innrykk, id, fornavn, etternavn);
     }
-    
+
     public void skrivUtMedProsjekter() {
         System.out.println();
         skrivUt("");
@@ -41,22 +41,21 @@ public class Ansatt {
         deltagelser.remove(prosjektdeltagelse);
     }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getFornavn() {
-		return fornavn;
-	}
+    public String getFornavn() {
+        return fornavn;
+    }
 
-	public String getEtternavn() {
-		return etternavn;
-	}
+    public String getEtternavn() {
+        return etternavn;
+    }
 
-	public List<Prosjektdeltagelse> getDeltagelser() {
-		return deltagelser;
-	}
-    
-    
+    public List<Prosjektdeltagelse> getDeltagelser() {
+        return deltagelser;
+    }
+
 
 }
